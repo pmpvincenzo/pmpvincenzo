@@ -1,14 +1,17 @@
+import java.util.List;
+
 //INDENTAZIONE
 
 public class Giardino {
 	private int codice;
-	private String proprietario;
+	private Proprietario proprietario;
 	private String indirizzo;
 	private int dimensione;
-	private char v;
-	private char w;
+	private List<Fiore> v;
+	private List<Integer> w;
 
-	public Giardino(int codice, String proprietario, String indirizzo, int dimensione, char v, char w) {
+
+	public Giardino(int codice, Proprietario proprietario, String indirizzo, int dimensione, List<Fiore> v, List<Integer> w) {
 		this.codice = codice;
 		this.proprietario = proprietario;
 		this.indirizzo = indirizzo;
@@ -24,7 +27,7 @@ public class Giardino {
 
 	}
 
-	public String GetProprietario() {
+	public Proprietario GetProprietario() {
 		return proprietario;
 	}
 
@@ -36,12 +39,14 @@ public class Giardino {
 		return dimensione;
 	}
 
-	public char Getv() {
+	public List<Fiore> getV() {
 		return v;
 	}
 
-	public char getw() {
+	public List<Integer> getW() {
 		return w;
 	}
+
+
 
 }
