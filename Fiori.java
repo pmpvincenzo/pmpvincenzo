@@ -1,4 +1,5 @@
 public class  Fiori
+//ciao
 {   private String nome;
 	private float costo;
 	
