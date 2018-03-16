@@ -53,10 +53,10 @@ public class Vivaio {
 	}
 
 	public ArrayList<Giardino> metodo3(){
-    	int numeroFiori = lenght(listaFiori);
+    	int numeroFiori = listaFiori.lenght();
     	ArrayList<Giardino> listaGiardini = new ArrayList<Giardino>();
         for(Giardino g : listaGiardini) {
-        	if (lenght(numeroFiori==3)) {
+        	if  (listaGiardini.lenght() == 3) {
         		if (g.getDimensione() == numeroFiori){
     	    	    listaGiardini.add(g);
     	    	    numeroFiori--;
