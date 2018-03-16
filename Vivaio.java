@@ -52,7 +52,7 @@ public class Vivaio {
 		return listaFiori;
 	}
 
-		public ArrayList<Giardino> metodo3(){
+	public ArrayList<Giardino> metodo3(){
     	int numeroFiori = lenght(listaFiori);
     	ArrayList<Giardino> listaGiardini = new ArrayList<Giardino>();
         for(Giardino g : listaGiardini) {
