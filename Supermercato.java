@@ -26,16 +26,16 @@ public class Supermercato {
 		return listaAcquisti;
 	}
 
-	public List<String> articoliCitt‡(String s) {
-		ArrayList<String> articoliCitt‡ = new ArrayList<String>();
+	public List<String> articoliCitt≈ï(String s) {
+		ArrayList<String> articoliCitt≈ï = new ArrayList<String>();
 		for (Acquisti a : listaAcquisti) {
 			for (Cliente c : a.getCliente()) {
-				if (c.getCitt‡().equals(s)) {
+				if (c.getCitt≈ï().equals(s)) {
                 //mi sono bloccato
 				}
 			}
 		}
-		return articoliCitt‡;
+		return articoliCitt≈ï;
 	}
 
 	public List<Articolo> articoliCostosi(int d, double p) {
@@ -53,8 +53,10 @@ public class Supermercato {
 	public List<Cliente> clientiTop(int di,int df){
 		ArrayList<Cliente> clientiTop = new ArrayList<Cliente>();
 		int contatore= 0;
-		for (Acquisti a: listaAcquisti){
-			if(a.getCliente())
+		for (cliente c: listaClienti){
+			if(c.getCliente().eguals(c) && c.getData >=di && c.getData <= df ){
+				contatore += c.getArticoli().getPrezzo()
+			}
 		//mi sono bloccato anche qui mannaia la puttana	
 		}
 	}
