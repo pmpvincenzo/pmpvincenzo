@@ -45,7 +45,7 @@ public class Vivaio {
 	public ArrayList<Fiore> metodo2(int d, String c){
 		ArrayList<Fiore> listaFiori = new ArrayList<Fiore>();
 		for(Giardino g: listaGiardini) {
-			if (g.getDimensione() == d && g.getProprietario.getCittà.eguals(c)){
+			if (g.getDimensione() == d && g.getProprietario().getCittà().eguals(c)){
 				listaFiori.addAll(g.getV());
 			}
 		}
