@@ -1,18 +1,19 @@
 //INDENTAZIONE DIO SANTO
 public class Proprietario {
 	private String nome;
-	private String città;
+	//ASSOLUTAMENTE MAI ACCENTI IN JAVA
+	private String citta;
 
 	public Proprietario(String nome, String città) {
 		this.nome = nome;
-		this.città = città;
+		this.citta = città;
 	}
 
 	public String getNome() {
 		return nome;
 	}
 
-	public String getCittà() {
-		return città;
+	public String getCitta() {
+		return citta;
 	}
 }

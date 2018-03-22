@@ -45,7 +45,8 @@ public class Vivaio {
 	public ArrayList<Fiore> metodo2(int d, String c){
 		ArrayList<Fiore> listaFiori = new ArrayList<Fiore>();
 		for(Giardino g: listaGiardini) {
-			if (g.getDimensione() == d && g.getProprietario().getCitt√†().eguals(c)){
+			//eguals???? EQUALS, NON EGUALS, guardali i metodi, non scrivere a cazzo
+			if (g.getDimensione() == d && g.getProprietario().getCitta().equals(c)){
 				listaFiori.addAll(g.getV());
 			}
 		}
@@ -53,10 +54,15 @@ public class Vivaio {
 	}
 
 	public ArrayList<Giardino> metodo3(){
-    	int numeroFiori = listaFiori.lenght();
+		//Programma con un IDE come eclipse, altrimenti non ti compiler‡ mai un cazzo,
+		//errori come lenght anziche length non si possono vedere
+//    	int numeroFiori = listaFiori.lenght();
+    	int numeroFiori = listaFiori.size();
     	ArrayList<Giardino> listaGiardini = new ArrayList<Giardino>();
         for(Giardino g : listaGiardini) {
-        	if  (listaGiardini.lenght() == 3) {
+        	//Quando si tratta di liste non Ë length, ma Ë size()
+//        	if  (listaGiardini.length() == 3) {
+        	if  (listaGiardini.size() == 3) {
         		if (g.getDimensione() == numeroFiori){
     	    	    listaGiardini.add(g);
     	    	    numeroFiori--;
@@ -67,6 +73,10 @@ public class Vivaio {
     	    break;
             }
         }
-        return numeroFiori;
+        //Se ti deve restituire un Arraylist di giardino il ritorno Ë sbagliato
+        //Se ti deve restituire il numero dei fiori, Ë sbagliata la firma del metodo che deve restituire un intero
+        //Ti lascio il ritorno a null, sistema sta cosa e ritorna quello che ti serve
+//        return numeroFiori;
+        return null;
 	}
 }

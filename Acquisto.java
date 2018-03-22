@@ -1,27 +1,29 @@
+import java.util.ArrayList;
 
 public class Acquisto {
-	private Cliente Cliente;
-	private int Data;
-	private ArrayList<Articoli> Articoli;
-	//mi è venuto un dubbio, visto che negli array<Articoli> sono contenuti gli articoli che richiamiamo
-	//nella classe "Articoli" non dovrei faro lo stesso lavoro fatto con "private Cliente Cliente"?
+	//Le variabili vanno scritte in lettera minuscola : Dario
+	private Cliente cliente;
+	private int data;//int data???? Una data rappresentata da un intero???
+	private ArrayList<Articolo> articolo;
+	//mi è venuto un dubbio, visto che negli array<Articolo> sono contenuti gli articoli che richiamiamo
+	//nella classe "Articolo" non dovrei faro lo stesso lavoro fatto con "private Cliente Cliente"?
 	
-	public Acquisto(Cliente Cliente, int Data, ArrayList<Articoli> Articoli){
-		this.Cliente=Cliente;
-		this.Data=Data;
-		this.Articoli=Articoli;
+	public Acquisto(Cliente cliente, int data, ArrayList<Articolo> articolo){
+		this.cliente=cliente;
+		this.data=data;
+		this.articolo=articolo;
 	}
 	
 	public Cliente getCliente(){
-		return Cliente;
+		return cliente;
 	}
 	
-	public String getData(){
-		return Data;
+	public int getData(){
+		return data;
 	}
 	
-	public ArrayList<Articoli> getArticoli(){
-		return Articoli;
+	public ArrayList<Articolo> getArticoli(){
+		return articolo;
 	}
 
 }

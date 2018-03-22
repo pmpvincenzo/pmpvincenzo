@@ -22,20 +22,20 @@ public class Giardino {
 
 	// I METODI VANNO SCRITTI CON LA LETTERA MINUSCOLA
 	// getCodice non GetCodice, altrimenti getCancer()
-	public int GetCodice() {
+	public int getCodice() {
 		return codice;
 
 	}
 
-	public Proprietario GetProprietario() {
+	public Proprietario getProprietario() {
 		return proprietario;
 	}
 
-	public String GetIndirizzo() {
+	public String getIndirizzo() {
 		return indirizzo;
 	}
 
-	public int GetDimensione() {
+	public int getDimensione() {
 		return dimensione;
 	}
 
