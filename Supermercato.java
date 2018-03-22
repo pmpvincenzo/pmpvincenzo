@@ -2,13 +2,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Supermercato {
-//	List<Clienti> listaClienti = new ArrayList<Clienti>();
+	// List<Clienti> listaClienti = new ArrayList<Clienti>();
 	/*
-	 * Enzo non è che se fai una lista le classi diventano al plurale, la
-	 * lista è una lista di oggetti "Cliente" non "Clienti", non è italiano
-	 * che stai scrivendo, tra l'altro ti da errore, quindi leggi il perchè ti da errore
+	 * Enzo non è che se fai una lista le classi diventano al plurale, la lista
+	 * è una lista di oggetti "Cliente" non "Clienti", non è italiano che stai
+	 * scrivendo, tra l'altro ti da errore, quindi leggi il perchè ti da errore
 	 */
-	
+
 	List<Cliente> listaClienti = new ArrayList<Cliente>();
 	List<Articolo> listaArticoli = new ArrayList<Articolo>();
 	List<Acquisto> listaAcquisti = new ArrayList<Acquisto>();
@@ -36,6 +36,19 @@ public class Supermercato {
 	public List<String> articoliCitta(String s) {
 		ArrayList<String> articoliCitta = new ArrayList<String>();
 		for (Acquisto a : listaAcquisti) {
+			if (a.getCliente().getCitta().equals(s)) {
+				if (articoliCitta.isEmpty()){
+					articoliCitta.add(a.getArticoli().getNome());
+					//non riesco a sistemare queste 2, ho provato come hai detto tu a creare una
+					//nuova variabile e successivamente fare add array ma non worka
+				}
+				for (Articolo ar: a.getArticoli()){
+					if (articoliCitta.contains(ar)){
+						articoliCitta.add(ar);
+					}	
+				}
+			}
+			
 			/*
 			 * E' normale che ti blocchi, vai a guardare la classe Acquisto,
 			 * cosa ti restituisce quel getCliente()? Un oggetto di tipo cliente,
@@ -56,52 +69,38 @@ public class Supermercato {
 	public List<Articolo> articoliCostosi(int d, double p) {
 		ArrayList<Articolo> articoliCostosi = new ArrayList<Articolo>();
 		for (Acquisto a : listaAcquisti) {
-			/*
-			 * Non hai chiaro il concetto del forEach, il ciclo 
-			 * funziona che a destra tu metti una lista, a sinistra
-			 * è come se creassi un oggetto temporaneo dello stesso tipo della lista
-			 * tipo 
-			 * for(OggettoX oggetto : listaOggettiTipoX){
-			 * }
-			 * non puoi dare all'oggetto temporaneo un tipo a cazzo di cane
-			 * tipo 
-			 * for(OggettoY oggetto :listaOggettiTipoX)
-			 * Questo non funzionerebbe
-			 */
-			//Commentiamo sto forEach tuo
-//			for (Data d : a.getData()) {
-//				if (a.getData() == d && a.getPrezzo() >= p) {
-//					articoliCostosi.addAll(a.getArticoli);
-//				}
-//			}
-			/*
-			 * Io non so cosa ci devi fare con la data che c'è dentro acquisto
-			 * ma esattamente come sopra, se vai a guardare la classe Articolo
-			 * vedrai che data non è una lista di int, ma un singolo int,
-			 * quindi ripeto, che stracazzo ti cicli?
-			 */
-			
+			if (a.getData()==d ) {
+				for (Articolo art: a.getArticoli()){
+					if (art.getPrezzo()>=p){
+						articoliCostosi.add(art);
+					}
+				}
+			}	
 		}
 		return articoliCostosi;
 	}
 	
-	public List<Cliente> clientiTop(int di,int df){
-		ArrayList<Cliente> clientiTop = new ArrayList<Cliente>();
-		int contatore= 0;
-		//L'oggetto è Cliente, non cliente, se stai programmando con Eclipse
-		//vedi che diventa rosso? C'è un motivo
+	private Cliente Elemento(){
 		for (Cliente c: listaClienti){
-			/*
-			 * Guarda la classe CLiente, esiste un getCliente che ti restituisce un
-			 * oggetto Cliente con cui fare l'uguaglianza? Per il momento no, quindi
-			 * devi sistemare la classe, anche se il fatto che fai un'uguaglianza
-			 * del genere non ha sente, sostanzialmente stai chiedendo se il cliente c è
-			 * uguale a se stesso.
-			 */
-//			if(c.getCliente().eguals(c) && c.getData >=di && c.getData <= df ){
-//				contatore += c.getArticoli().getPrezzo()
-//			}
-		//mi sono bloccato anche qui mannaia la puttana	
+			return c;
+		}
+		return null;	
+	}   
+	
+	
+
+	public List<Cliente> clientiTop(int di, int df) {
+		ArrayList<Cliente> clientiTop = new ArrayList<Cliente>();
+		float contatore = 0;
+		for (Acquisto a : listaAcquisti) {
+			if (a.getCliente().equals(Elemento()) && a.getData()>=di && a.getData()<=df){
+				contatore+= a.getArticoli().getPrezzo();
+				clientiTop.add(contatore,getCliente());
+				//volevo provare ad inserire volta per volta il costo totale degli oggetti
+				//e l utente che veniva assegnato quel costo nell'array clientiTop. Cosa sbaglio?
+			}
+			
+			
 		}
 		return clientiTop;
 	}

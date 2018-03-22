@@ -2,12 +2,12 @@
 public class Cliente {
 	private String CodiceFiscale;
 	private String Nome;
-	private String Città;
+	private String Citta;
 
-	public Cliente(String CodiceFiscale,String Nome,String Città){
+	public Cliente(String CodiceFiscale,String Nome,String Citta){
 	this.CodiceFiscale = CodiceFiscale;
 	this.Nome = Nome;
-	this.Città = Città;
+	this.Citta = Citta;
 	}
 	
 	public String getCodiceFiscale(){
@@ -18,7 +18,7 @@ public class Cliente {
 		return Nome;
 	}
 	
-	public String getCittà(){
-		return Città;
+	public String getCitta(){
+		return Citta;
 	}
 }
