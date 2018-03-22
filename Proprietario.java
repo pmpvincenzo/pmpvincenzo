@@ -4,9 +4,9 @@ public class Proprietario {
 	//ASSOLUTAMENTE MAI ACCENTI IN JAVA
 	private String citta;
 
-	public Proprietario(String nome, String città) {
+	public Proprietario(String nome, String citta) {
 		this.nome = nome;
-		this.citta = città;
+		this.citta = citta;
 	}
 
 	public String getNome() {
