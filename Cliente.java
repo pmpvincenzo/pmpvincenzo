@@ -1,24 +1,24 @@
 
 public class Cliente {
-	private String CodiceFiscale;
-	private String Nome;
-	private String Citta;
+	private String codiceFiscale;
+	private String nome;
+	private String citta;
 
-	public Cliente(String CodiceFiscale,String Nome,String Citta){
-	this.CodiceFiscale = CodiceFiscale;
-	this.Nome = Nome;
-	this.Citta = Citta;
+	public Cliente(String codiceFiscale,String nome,String citta){
+	this.codiceFiscale = codiceFiscale;
+	this.nome = nome;
+	this.citta = citta;
 	}
 	
 	public String getCodiceFiscale(){
-	    return CodiceFiscale;	
+	    return codiceFiscale;	
 	}
 	
 	public String getNome(){
-		return Nome;
+		return nome;
 	}
 	
 	public String getCitta(){
-		return Citta;
+		return citta;
 	}
 }

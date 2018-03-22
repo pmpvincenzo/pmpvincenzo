@@ -1,25 +1,25 @@
 
 public class Articolo {
-	private String Codice;
-	private String NomeArticolo;
-	private float Prezzo;
+	private String codice;
+	private String nomeArticolo;
+	private float prezzo;
 	
-	public Articolo(String Codice,String NomeArticolo,float Prezzo){
-		this.Codice=Codice;
-		this.NomeArticolo=NomeArticolo;
-		this.Prezzo=Prezzo;
+	public Articolo(String codice,String nomeArticolo,float prezzo){
+		this.codice=codice;
+		this.nomeArticolo=nomeArticolo;
+		this.prezzo=prezzo;
 	}
 	
 	public String getCodice(){
-		return Codice;
+		return codice;
 	}
 	
 	public String getNomeArticolo(){
-		return NomeArticolo;
+		return nomeArticolo;
 	}
 	
 	public float getPrezzo(){
-		return Prezzo;
+		return prezzo;
 	}
 	
 
