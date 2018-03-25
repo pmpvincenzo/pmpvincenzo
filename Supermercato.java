@@ -88,8 +88,8 @@ public class Supermercato {
 		return null;	
 	}   
 	
-	public HashMap<String,Integer> listaValori(int di, int df){
-		HashMap<String,Integer> listaValori = new HashMap<String, Integer>();
+	public HashMap<Cliente,float> listaValori(int di, int df){
+		HashMap<Cliente,float> listaValori = new HashMap<Cliente, float>();
 		for (Acquisto a : listaAcquisti) {
 			float contatore = 0; //contatore totale
 			if (a.getCliente().equals(elemento()) && a.getData()>=di && a.getData()<=df){ //guardo tutti gli elementi simili tra di loro e che la data sia compresa tra quei 2 interi
