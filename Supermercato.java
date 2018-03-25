@@ -88,27 +88,23 @@ public class Supermercato {
 		return null;	
 	}   
 	
-	public HashMap<Cliente,float> listaValori(int di, int df){
-		HashMap<Cliente,float> listaValori = new HashMap<Cliente, float>();
+	public List<Cliente> clientiTop (int di, int df){
+		ArrayList<Cliente> clientiTop = new ArrayList<Cliente>();
+		HashMap<Cliente,Float> listaValori = new HashMap<Cliente,Float>();
 		for (Acquisto a : listaAcquisti) {
 			float contatore = 0; //contatore totale
 			if (a.getCliente().equals(elemento()) && a.getData()>=di && a.getData()<=df){ //guardo tutti gli elementi simili tra di loro e che la data sia compresa tra quei 2 interi
 				for (Articolo t : a.getArticoli()){  //ciclo la lista degli articoli contenuta nell'oggetto acquisti
 					contatore += t.getPrezzo(); //e sommo ogni singolo prezzo
 				}	
-			listaValori.put(elemento(), contatore);	//errore? why
+			listaValori.put(elemento(), contatore);	
 			}
 		}
-		return listaValori;
+		listaValori.sort(keys);
 	}
 	
 	
 
-	public List<Cliente> clientiTop() {
-		ArrayList<Cliente> clientiTop = new ArrayList<Cliente>();
-	    
-		
-		return clientiTop;
-	}
+
 
 }
