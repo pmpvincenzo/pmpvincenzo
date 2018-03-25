@@ -84,22 +84,16 @@ public class Supermercato {
 		return articoliCostosi;
 	}
 
-	public Cliente elemento() {
-		for (Cliente c : listaClienti) { // puntatore al CLiente
-			return c;
-		}
-		return null;
-	}
-
 	public List<Cliente> clientiTop(int di, int df) {
 		ArrayList<Cliente> clientiTop = new ArrayList<Cliente>();
 		HashMap<Cliente, Float> listaValori = new HashMap<Cliente, Float>();
 		listaValori = generaMappaClientiPrezzi(di, df, listaValori);
 		trovaClientiTop(clientiTop, listaValori);
-		
-			return clientiTop;
+
+		return clientiTop;
 	}
-	//Metodo nuovo
+
+	// Metodo nuovo
 	private ArrayList<Cliente> trovaClientiTop(ArrayList<Cliente> clientiTop, HashMap<Cliente, Float> listaValori) {
 		Cliente clienteTop = null;
 		while (clientiTop.size() <= 2 && listaValori.size() >= 2) {
@@ -118,30 +112,13 @@ public class Supermercato {
 	private HashMap<Cliente, Float> generaMappaClientiPrezzi(int di, int df, HashMap<Cliente, Float> listaValori) {
 		for (Acquisto a : listaAcquisti) {
 			float contatore = 0; // contatore totale
-			if (a.getCliente().equals(elemento()) && a.getData() >= di && a.getData() <= df) { // guardo
-																								// tutti
-																								// gli
-																								// elementi
-																								// simili
-																								// tra
-																								// di
-																								// loro
-																								// e
-																								// che
-																								// la
-																								// data
-																								// sia
-																								// compresa
-																								// tra
-																								// quei
-																								// 2
-																								// interi
-				for (Articolo t : a.getArticoli()) { // ciclo la lista degli
-														// articoli contenuta
-														// nell'oggetto acquisti
-					contatore += t.getPrezzo(); // e sommo ogni singolo prezzo
+			for(Cliente c : listaClienti){
+				if (a.getCliente().equals(c) && a.getData() >= di && a.getData() <= df) { 
+					for (Articolo t : a.getArticoli()) {
+						contatore += t.getPrezzo(); 
+					}
+					listaValori.put(c, contatore);
 				}
-				listaValori.put(elemento(), contatore);
 			}
 		}
 		return listaValori;
