@@ -77,6 +77,6 @@ public class Vivaio {
         //Se ti deve restituire il numero dei fiori, è sbagliata la firma del metodo che deve restituire un intero
         //Ti lascio il ritorno a null, sistema sta cosa e ritorna quello che ti serve
 //        return numeroFiori;
-        return null;
+        return listaGiardini;
 	}
 }
