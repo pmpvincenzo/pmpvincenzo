@@ -99,7 +99,7 @@ public class Supermercato {
 		
 			return clientiTop;
 	}
-
+	//Metodo nuovo
 	private ArrayList<Cliente> trovaClientiTop(ArrayList<Cliente> clientiTop, HashMap<Cliente, Float> listaValori) {
 		Cliente clienteTop = null;
 		while (clientiTop.size() <= 2 && listaValori.size() >= 2) {
