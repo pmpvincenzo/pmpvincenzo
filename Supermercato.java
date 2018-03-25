@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Supermercato {
@@ -80,28 +81,33 @@ public class Supermercato {
 		return articoliCostosi;
 	}
 	
-	private Cliente Elemento(){
-		for (Cliente c: listaClienti){
+	public Cliente elemento(){
+		for (Cliente c: listaClienti){ //puntatore al CLiente
 			return c;
 		}
 		return null;	
 	}   
 	
+	public HashMap<String,Integer> listaValori(int di, int df){
+		HashMap<String,Integer> listaValori = new HashMap<String, Integer>();
+		for (Acquisto a : listaAcquisti) {
+			float contatore = 0; //contatore totale
+			if (a.getCliente().equals(elemento()) && a.getData()>=di && a.getData()<=df){ //guardo tutti gli elementi simili tra di loro e che la data sia compresa tra quei 2 interi
+				for (Articolo t : a.getArticoli()){  //ciclo la lista degli articoli contenuta nell'oggetto acquisti
+					contatore += t.getPrezzo(); //e sommo ogni singolo prezzo
+				}	
+			listaValori.put(elemento(), contatore);	//errore? why
+			}
+		}
+		return listaValori;
+	}
+	
 	
 
-	public List<Cliente> clientiTop(int di, int df) {
+	public List<Cliente> clientiTop() {
 		ArrayList<Cliente> clientiTop = new ArrayList<Cliente>();
-		float contatore = 0;
-		for (Acquisto a : listaAcquisti) {
-			if (a.getCliente().equals(Elemento()) && a.getData()>=di && a.getData()<=df){
-				contatore+= a.getArticoli().getPrezzo();
-				clientiTop.add(contatore,getCliente());
-				//volevo provare ad inserire volta per volta il costo totale degli oggetti
-				//e l utente che veniva assegnato quel costo nell'array clientiTop. Cosa sbaglio?
-			}
-			
-			
-		}
+	    
+		
 		return clientiTop;
 	}
 
